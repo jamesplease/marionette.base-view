@@ -1,11 +1,9 @@
 import Mn from 'backbone.marionette';
 
-// This is the basic view used throughout Admiralty. It's a LayoutView,
-// which means it has all of the functionality of Marionette's ItemView, too.
-export default Mn.LayoutView.extend({
+var BaseView = Mn.LayoutView.extend({
 
-  // Update `showChildView` to coerce the region, if it doesn't exist.
-  // Also, return the LayoutView instance rather than the Region.
+  // Update `showChildView` to create the region, if it doesn't exist.
+  // Then, return the LayoutView instance.
   showChildView(selector, view) {
     var regionName = this._generateRegionName(selector);
 
@@ -28,3 +26,7 @@ export default Mn.LayoutView.extend({
     return `r-${selector}`;
   },
 });
+
+Mn.BaseView = BaseView;
+
+export default BaseView;
