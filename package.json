@@ -16,7 +16,13 @@
   "files": [
     "app"
   ],
-  "keywords": [],
+  "keywords": [
+    "marionette",
+    "backbone",
+    "view",
+    "app",
+    "webapp"
+  ],
   "author": "Jmeas &lt;jellyes2@gmail.com&gt;",
   "license": "MIT",
   "bugs": {
