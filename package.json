@@ -23,7 +23,7 @@
     "app",
     "webapp"
   ],
-  "author": "Jmeas &lt;jellyes2@gmail.com&gt;",
+  "author": "Jmeas <jellyes2@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jmeas/marionette.base-view/issues"
