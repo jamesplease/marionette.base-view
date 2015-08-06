@@ -1,12 +1,4 @@
-// Create our JSDom document
-global.jsdom = require('jsdom').jsdom;
-global.document = jsdom(`
-  <html>
-    <head></head>
-    <body></body>
-  </html>
-`);
-global.window = global.document.parentWindow;
+require('simple-jsdom').install();
 
 global.chai = require('chai');
 global.sinon = require('sinon');
