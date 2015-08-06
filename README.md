@@ -52,6 +52,23 @@ prototypes should be updated to use this instead of ItemViews.
 2. You should never specify a `regions` hash for your views, nor should you use any method exposed by LayoutView that contains the word
 `region`.
 
+### Basic Example
+
+```js
+// Extend it like usual
+var MyView = BaseView.extend({
+  template: myTemplate,
+
+  onShow() {
+    // Don't bother with specifying regions. Just use selectors.
+    this.showChildView('.navbar-container', new NavBar());
+
+    // Later, you could get the navbar by calling...
+    var navbar = this.getChildView('.navbar-container');
+  }
+});
+```
+
 ### API
 
 #### `showChildView( selector, view )`
