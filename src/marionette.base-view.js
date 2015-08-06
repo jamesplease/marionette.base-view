@@ -18,7 +18,8 @@ var BaseView = Mn.LayoutView.extend({
   // Update `getChildView` to also accept a selector as an argument
   getChildView(selector) {
     var regionName = this._generateRegionName(selector);
-    return this.getRegion(regionName).currentView;
+    var region = this.getRegion(regionName);
+    return region ? region.currentView : undefined;
   },
 
   // Given a selector, return the name of the region.
