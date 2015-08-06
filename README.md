@@ -8,6 +8,15 @@ A better View for Marionette.
 [![Dependency Status](https://david-dm.org/jmeas/marionette.base-view.svg)](https://david-dm.org/jmeas/marionette.base-view)
 [![devDependency Status](https://david-dm.org/jmeas/marionette.base-view/dev-status.svg)](https://david-dm.org/jmeas/marionette.base-view#info=devDependencies)
 
+### Installation
+
+The quickest way to use this library is through npm or Bower.
+
+```sh
+bower install marionette.base-view
+npm install marionette.base-view
+```
+
 ### Motivation
 
 I made this library for two reasons:
@@ -32,3 +41,23 @@ but most of the time you can (and should) ignore it and just deal with the API p
 with Regions.
 
 This library provides you with some API sugar that allows you to never use regions directly.
+
+### Recommended Usage
+
+There are two basic guidelines for using this library: one for each motive described above.
+
+1. You should use this instead of ItemViews and LayoutViews in all situations. Also, your base CollectionView and CompositeView
+prototypes should be updated to use this instead of ItemViews.
+
+2. You should never specify a `regions` hash for your views, nor should you use any method exposed by LayoutView that contains the word
+`region`.
+
+### API
+
+#### `showChildView( selector, view )`
+
+Displays `view` in the element matched by `selector`. Under the hood, a region for this element will be created if it does not exist.
+
+### `getChildView( selector )`
+
+Returns the `view`, if there is one, contained in the element matched by `selector`.
