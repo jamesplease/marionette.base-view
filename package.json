@@ -1,6 +1,6 @@
 {
   "name": "marionette.base-view",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A better View for Marionette.",
   "main": "dist/marionette.base-view.js",
   "scripts": {
