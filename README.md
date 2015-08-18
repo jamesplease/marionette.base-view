@@ -78,3 +78,7 @@ Displays `view` in the element matched by `selector`. Under the hood, a region f
 ### `getChildView( selector )`
 
 Returns the `view`, if there is one, contained in the element matched by `selector`.
+
+### `empty( selector )`
+
+Empties the underlying region matched by `selector`, if there is one.
