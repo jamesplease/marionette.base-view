@@ -22,6 +22,16 @@ var BaseView = Mn.LayoutView.extend({
     return region ? region.currentView : undefined;
   },
 
+  // Empties the region with the given selector.
+  empty(selector) {
+    var regionName = this._generateRegionName(selector);
+    var region = this.getRegion(regionName);
+    if (region) {
+      region.empty();
+    }
+    return this;
+  },
+  
   // Given a selector, return the name of the region.
   _generateRegionName(selector) {
     return `r-${selector}`;
