@@ -22,12 +22,24 @@ var BaseView = Mn.LayoutView.extend({
     return region ? region.currentView : undefined;
   },
 
-  // Empties the region with the given selector.
-  empty(selector) {
+  // Destroys the child view contained in `selector`
+  destroyChildView(selector) {
+    this._clearChildView(selector, true);
+  },
+
+  // Detaches the child view contained in `selector`
+  detachChildView(selector) {
+    this._clearChildView(selector, false);
+  },
+
+  // Internal method that delegates to `Region#empty` to remove a child view
+  _clearChildView(selector, destroy) {
     var regionName = this._generateRegionName(selector);
     var region = this.getRegion(regionName);
     if (region) {
-      region.empty();
+      region.empty({
+        preventDestroy: !destroy
+      });
     }
     return this;
   },
